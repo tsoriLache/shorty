@@ -1,0 +1,27 @@
+{
+  "name": "shorty",
+  "version": "1.0.0",
+  "description": "url shortner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsoriLache/shorty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsoriLache/shorty/issues"
+  },
+  "homepage": "https://github.com/tsoriLache/shorty#readme",
+  "dependencies": {
+    "webpack": "^5.61.0"
+  },
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.4.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
