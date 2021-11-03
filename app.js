@@ -1,17 +1,18 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 3000;
 const cors = require("cors");
-const shortRouter = require('./routers/api')
+const api = require('./routers/api')
+const redirect = require('./routers/redirect')
 app.use(cors());
 
-app.use('/', express.static(path.resolve('./dist'))); // serve main path as static dir
-app.get('/', function(req, res) { // serve main path as static file
-  res.sendFile(path.resolve('./dist/index.html'))
-});
+// app.use('/', express.static(path.resolve('./dist'))); // serve main path as static dir
+// app.get('/', function(req, res) { // serve main path as static file
+//   res.sendFile(path.resolve('./dist/index.html'))
+// });
 
-app.use('/api/',shortRouter);
-app.use('/',);
+app.use('/api/',api);
+app.use('/s/',redirect);
 
 
 
