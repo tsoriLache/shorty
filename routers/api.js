@@ -25,6 +25,12 @@ router.post('/shorturl/', function (req, res) {
     res.end();
 })
 
+// router.get('/:uid', function (req, res) {
+//     const { uid } = req.params;
+//     const originalUrl = db[uid];
+//     res.redirect(`${originalUrl}`);
+// })
+
 router.get('/statistic/:shorturl-id', function (req, res) {
     res.send('root')
 })
