@@ -1,4 +1,6 @@
-let uid = 999999;
+const {getLastUid} = require('../db.js')
+
+let uid = getLastUid();
 
 module.exports = function generateUId(){
     const shortUrl = `${uid.toString(36)}`;
