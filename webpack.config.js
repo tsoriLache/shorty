@@ -8,7 +8,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const stylesHandler = "style-loader";
 
 const config = {
-  entry: "./src/main.js",
+  entry: "./src/front/main.js",
   output: {
     path: path.resolve(__dirname, "dist"),
   },
@@ -18,7 +18,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/front/index.html",
     }),
 
     // Add your plugins here
