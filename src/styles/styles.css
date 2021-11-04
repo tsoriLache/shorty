@@ -1,0 +1,9 @@
+.btn-circle.btn-md {
+  width: 7vh;
+  height: 7vh;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  font-size: 3vh;
+  text-align: center;
+}
