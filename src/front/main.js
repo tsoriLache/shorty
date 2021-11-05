@@ -35,7 +35,7 @@ const getStats = async()=>{
   try {
     const arr = document.getElementById('short-link').href.split('/');
     const uid = arr[arr.length-1]
-    const res = await axios.get(`http://localhost:3000/api/statistic/${uid}`)
+    const res = await axios.get(`/api/statistic/${uid}`)
     console.log(res.data);
     appendStats(res.data)
   }catch{

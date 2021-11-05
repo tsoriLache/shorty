@@ -10,7 +10,7 @@ router.post('/shorturl/',urlValidator, function (req, res) {
     }else{
         try{
             const uid = addNewUrlToDB(originalUrl)
-            res.end(`http://localhost:3000/s/${uid}`);
+            res.end(`/s/${uid}`);
         }catch(err){
             next({status:500,message:'problem in DB'})
         }
@@ -20,7 +20,7 @@ router.post('/shorturl/',urlValidator, function (req, res) {
 router.get('/statistic/:uid', function (req, res) {
     const { uid } = req.params;
     const stats = { originalUrl:getOriginalUrl(uid),
-                    shortUrl:`http://localhost:3000/s/${uid}`,
+                    shortUrl:`/s/${uid}`,
                     dateCrated:getCreationDate(uid),
                     counter:getCounter(uid)
                   }
