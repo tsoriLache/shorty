@@ -12,20 +12,21 @@
     <button id="user-btn" type="button" class="d-flex align-self-start m-5 btn btn-primary btn-circle btn-md">B</button>
     <main id="main" class="m-2 container px-4 d-flex flex-column justify-content-center align-items-center text-center" >
       <div class="form-outline mt-5">
-        <h1 class="form-label font-weight-bold"  style="font-size: 600%;">SHORTY</h1 >
-        <p>Turn uniform resource locator to URL  easy&free</p>
-        <p class="form-inline" style="display: block;">
+        <h1 class="form-label font-weight-bold"  style="font-size: 700%;">SHORTY</h1 >
+        <p style="font-size: 100%;">Turn uniform resource locator to URL  easy&free</p>
+        <p class="form-inline d-flex flex-row"  >
           <input id="url-inpt" class="form-control mr-sm-2"  placeholder="Paste URL">
           <button id="short-btn" class="btn btn-dark my-2 my-sm-0" disabled>Short✂</button>
         </p>
       </div>
-      <div id="short-link-msg" class="alert alert-secondary" role="alert">
-        This is Your New shorty-URL 
-        <a id='short-link' href="" target='_blank' class="alert-link"></a>
-        . Give it a click if you like.
+      <div id="user-msg" class="m-2 container px-4 d-flex flex-column justify-content-center align-items-center text-center" >
+        <div id="short-link-msg" class="alert alert-secondary" role="alert">
+          <a id='short-link' href="" target='_blank' class="alert-link"></a>
+          <p id="err-msg"></p>
+        </div>
+        <button id="stats-btn" class="btn btn-dark my-2 my-sm-0">statistics📈📊</button>
+        <div id="stats"></div>
       </div>
-      <button id="stats-btn" class="btn btn-dark my-2 my-sm-0">statistics📈📊</button>
-      <div id="stats"></div>
     </main>
   </body>
 </html>

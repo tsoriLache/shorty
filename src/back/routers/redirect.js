@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getOriginalUrl,addVisitToCounter } = require('../db');
+const { getOriginalUrl,addVisitToCounter } = require('../db/db');
 
 
 router.get('/:uid', function (req, res) {

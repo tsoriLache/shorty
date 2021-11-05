@@ -1,7 +1,8 @@
 'use strict'
+import "./styles/style.css";
 import axios from 'axios';
 import isValidHttpUrl from './js/validator.js'
-
+import { cleanUserMsgDisplay,appendStats } from "./js/disply";
 
 const enableShortBtn = ()=>{
     document.getElementById("short-btn").disabled = false;
@@ -14,6 +15,7 @@ const disableShortBtn = ()=>{
 }
 
 const ShortenUrl = async()=>{
+  cleanUserMsgDisplay()
   const originalUrl = document.getElementById('url-inpt').value;
   if(isValidHttpUrl(originalUrl)){
     try{
@@ -21,18 +23,24 @@ const ShortenUrl = async()=>{
       document.getElementById('short-link').innerText = res.data;
       document.getElementById('short-link').setAttribute('href', `${res.data}`);
     }catch(err){
-      document.getElementById('short-link-msg').innerText = `${err.message} NOT VALID URL`;
+      document.getElementById('err-msg').innerText = `${err.message} NOT VALID URL`;
     }
   }else{
-    document.getElementById('short-link-msg').innerText = 'NOT VALID URL';
+    document.getElementById('err-msg').innerText = 'NOT VALID URL';
   }
+  document.getElementById('user-msg').classList.toggle('not-disply')
 }
 
 const getStats = async()=>{
-  const arr = document.getElementById('short-link').href.split('/');
-  const uid = arr[arr.length-1]
-  const res = await axios.get(`http://localhost:3000/api/statistic/${uid}`)
-  document.getElementById('stats').innerText = `${res.data.originalUrl},${res.data.counter},${res.data.dateCrated}`
+  try {
+    const arr = document.getElementById('short-link').href.split('/');
+    const uid = arr[arr.length-1]
+    const res = await axios.get(`http://localhost:3000/api/statistic/${uid}`)
+    console.log(res.data);
+    appendStats(res.data)
+  }catch{
+    document.getElementById('stats').innerText = 'make sure you see the short url above'
+  }
 }
 
 

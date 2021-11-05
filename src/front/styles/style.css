@@ -7,3 +7,11 @@
   font-size: 3vh;
   text-align: center;
 }
+
+.not-disply {
+  display: none;
+}
+
+body {
+  background-color: rgba(97, 131, 235, 0.397);
+}
